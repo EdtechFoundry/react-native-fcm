@@ -132,6 +132,7 @@ public class FIRMessagingModule extends ReactContextBaseJavaModule implements Li
         }
         WritableMap fcm = Arguments.createMap();
         fcm.putString("action", newIntent.getAction());
+        fcm.putInt("opened_from_tray", 1);
         params.putMap("fcm", fcm);
         if (currentIntent == null){
             //the first intent is initial intent that opens the app
