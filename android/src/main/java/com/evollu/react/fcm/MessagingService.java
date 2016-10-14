@@ -21,13 +21,17 @@ public class MessagingService extends FirebaseMessagingService {
         if(remoteMessage.getData() != null){
             Map data = remoteMessage.getData();
             if (data.get("badge") != null) {
-                int badgeCount = Integer.parseInt((String)data.get("badge"));
-                if (badgeCount == 0) {
-                    Log.d(TAG, "Remove count");
-                    ShortcutBadger.removeCount(this);
-                } else {
-                    Log.d(TAG, "Apply count: " + badgeCount);
-                    ShortcutBadger.applyCount(this, badgeCount);
+                try {
+                    int badgeCount = Integer.parseInt((String)data.get("badge"));
+                    if (badgeCount == 0) {
+                        Log.d(TAG, "Remove count");
+                        ShortcutBadger.removeCount(this);
+                    } else {
+                        Log.d(TAG, "Apply count: " + badgeCount);
+                        ShortcutBadger.applyCount(this, badgeCount);
+                    }
+                } catch (Exception e) {
+                    Log.e(TAG, "Badge count needs to be an integer", e);
                 }
             }
         }
