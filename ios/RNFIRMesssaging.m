@@ -124,4 +124,19 @@ RCT_EXPORT_METHOD(unsubscribeFromTopic: (NSString*) topic)
                                               body:data];
 }
 
+RCT_EXPORT_METHOD(cancelAllLocalNotifications)
+{
+ [RCTSharedApplication() cancelAllLocalNotifications];
+}
+
+RCT_EXPORT_METHOD(setBadgeNumber: (NSInteger*) number)
+{
+  [RCTSharedApplication() setApplicationIconBadgeNumber:number];
+}
+
+RCT_EXPORT_METHOD(getBadgeNumber: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
+  resolve(@([RCTSharedApplication() applicationIconBadgeNumber]));
+}
+
 @end
