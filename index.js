@@ -23,11 +23,11 @@ FCM.cancelAllLocalNotifications = () => {
 
 FCM.setBadgeNumber = (number) => {
     return FIRMessaging.setBadgeNumber(number);
-}
+};
 
 FCM.getBadgeNumber = () => {
     return FIRMessaging.getBadgeNumber();
-}
+};
 
 FCM.on = (event, callback) => {
     const nativeEvent = eventsMap[event];
