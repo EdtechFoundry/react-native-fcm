@@ -18,7 +18,7 @@ FCM.requestPermissions = () => {
 };
 
 FCM.cancelAllLocalNotifications = () => {
-    RNFIRMessaging.cancelAllLocalNotifications();
+    return FIRMessaging.cancelAllLocalNotifications();
 };
 
 FCM.on = (event, callback) => {
