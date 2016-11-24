@@ -58,6 +58,12 @@ public class FIRMessagingModule extends ReactContextBaseJavaModule implements Li
     }
 
     @ReactMethod
+    public void cancelAllLocalNotifications() {
+        NotificationManager notificationManager = (NotificationManager) getReactApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
+    }
+
+    @ReactMethod
     public void subscribeToTopic(String topic){
         FirebaseMessaging.getInstance().subscribeToTopic(topic);
     }

@@ -124,4 +124,9 @@ RCT_EXPORT_METHOD(unsubscribeFromTopic: (NSString*) topic)
                                               body:data];
 }
 
+RCT_EXPORT_METHOD(cancelAllLocalNotifications)
+{
+ [RCTSharedApplication() cancelAllLocalNotifications];
+}
+
 @end

@@ -17,6 +17,10 @@ FCM.requestPermissions = () => {
     return FIRMessaging.requestPermissions();
 };
 
+FCM.cancelAllLocalNotifications = () => {
+    RNFIRMessaging.cancelAllLocalNotifications();
+};
+
 FCM.on = (event, callback) => {
     const nativeEvent = eventsMap[event];
 
