@@ -17,10 +17,10 @@
     "cloud messaging"
   ],
   "license": "MIT",
-  "name": "react-native-fcm",
+  "name": "@edtechfoundry/react-native-fcm",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/evollu/react-native-fcm.git"
   },
-  "version": "1.0.15"
+  "version": "1.0.15-1"
 }
